@@ -27,6 +27,7 @@ html {
 body {
   background-color: var(--White);
   font-family: 'Kumbh Sans', sans-serif;
+  user-select: none;
 }
 
 .container {
@@ -38,6 +39,10 @@ header {
   height: 6rem;
   align-items: center;
   border-bottom: 1px solid var(--Grayishblue);
+}
+
+.menuBar {
+  display: none;
 }
 
 nav {
@@ -254,6 +259,7 @@ main {
 .cartheading {
   border-bottom: 1px solid var(--Grayishblue);
   padding-bottom: 1rem;
+  font-weight: 600;
 }
 
 .productDetail {
@@ -405,4 +411,185 @@ main {
   border: 3px solid var(--Orange);
   border-radius: 16px;
   filter: blur(0.5px);
+}
+
+.navCart {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 60%;
+  background-color: var(--White);
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 1.5rem 1.5rem;
+  left: -300px;
+  opacity: 0; /* Initially hide with opacity */
+  visibility: hidden; /* Initially hide with visibility */
+  transition: left 0.5s ease, opacity 0.5s ease, visibility 0s 0.5s; /* Transition left, opacity, and visibility */
+  z-index: 1002;
+}
+
+.navCart img {
+  height: 1.5rem;
+}
+
+.navCart ul {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.navCart ul li {
+  margin-top: 1.5rem;
+}
+
+.showCard {
+  left: 0;
+  opacity: 1; /* Show with opacity */
+  visibility: visible; /* Show with visibility */
+  transition: left 0.5s ease, opacity 0.5s ease, visibility 0.5s; /* Transition left, opacity, and visibility */
+}
+
+.nextPreviousdiv {
+  position: absolute;
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  top: 16rem;
+  display: none;
+}
+
+.previousImage,
+.nextImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--White);
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+/* Adding responsiveness to the website */
+@media screen and (max-width: 1025px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 876px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 85%;
+  }
+  .menuBar {
+    display: flex;
+    margin-inline: 2rem;
+  }
+
+  .container {
+    padding: 0;
+  }
+  header {
+    border: 0;
+  }
+  nav ul {
+    display: none;
+  }
+
+  main {
+    display: block;
+    padding: 0;
+  }
+  .userPart {
+    width: 14rem;
+  }
+  .contentPart {
+    width: 30rem;
+  }
+  .cartNotification {
+    right: 5.1rem;
+  }
+  .imagePart {
+    width: 100%;
+  }
+  .thumbnailImg {
+    display: none;
+  }
+  .fg {
+    width: 100%;
+  }
+  .mainImage img {
+    border-radius: 0;
+    height: 22rem;
+    width: 33rem;
+  }
+  .descriptionPart {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+  .description {
+    margin-block: 1rem;
+  }
+  .exitSection {
+    display: block;
+    margin-top: 0;
+  }
+  .rupeesSection {
+    display: inline-block;
+  }
+  .actualRupees {
+    display: inline-block;
+    float: right;
+  }
+  .bar {
+    width: 100%;
+    margin-block: 0.5rem;
+  }
+  .addButton {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .addButton img {
+    height: 1.3rem;
+    width: 1.8rem;
+  }
+  .descriptionPart p {
+    font-size: 1.2rem;
+  }
+  .exitCard {
+    padding: 1.5rem;
+    width: 90%;
+    right: 1.5rem;
+    font-size: 1.3rem;
+  }
+  .productDetail {
+    width: 100%;
+  }
+  .emptyClass {
+    width: 100%;
+  }
+  .nextPreviousdiv {
+    display: flex;
+  }
 }

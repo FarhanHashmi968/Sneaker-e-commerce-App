@@ -11,6 +11,12 @@ const exitCardContainer = document.getElementsByClassName('exitCardContainer')
 const thumbnailImg = document.getElementsByClassName('thumbnailImg')
 const imageTodisplay = document.getElementsByClassName('imageTodisplay')
 const iconClose = document.getElementsByClassName('iconClose')
+const menuIcon = document.querySelector('.menuIcon')
+const navCart = document.querySelector('.navCart')
+const closeNav = document.querySelector('.closeNav')
+const mainImg = document.querySelector('.mainImg')
+const previousImage = document.querySelector('.previousImage')
+const nextImage = document.querySelector('.nextImage')
 
 let quantity = 0
 
@@ -105,7 +111,7 @@ cartImg[0].addEventListener('click', () => {
 
 // Adding function to close the exitcard if user press escape key
 document.addEventListener('keydown', (e) => {
-  if ((e.key = 'Escape' && !overlay[0].classList.contains('hidden'))) {
+  if (e.key == 'Escape' && !overlay[0].classList.contains('hidden')) {
     overlay[0].classList.add('hidden')
     exitCard[0].style.display = 'none'
   }
@@ -148,18 +154,13 @@ thumbnailImg[0].addEventListener('click', (e) => {
   //Added eventListener to thumbnails to change mainDisplay when clicked
   thumbnailImgDisplay.addEventListener('click', (e) => {
     mainImageimagePart.src = e.target.alt
-    // e.target.classList.add('active')
   })
 
   //Adding eventListener to next button
   document.querySelector('.iconNext').addEventListener('click', () => {
-    // console.log(mainImageimagePart.src)
     let slicedUrl = mainImageimagePart.src.slice(-20)
-    // console.log(slicedUrl)
     let properUrl = `/images${slicedUrl}`
-    // console.log(properUrl)
     let currIndex = imgArray.indexOf(properUrl)
-    // console.log(currIndex)
     if (currIndex === 3) {
       mainImageimagePart.src = imgArray[0]
     } else {
@@ -169,17 +170,47 @@ thumbnailImg[0].addEventListener('click', (e) => {
 
   //Adding eventListeners to previous button when clicked
   document.querySelector('.iconPrevious').addEventListener('click', () => {
-    console.log(mainImageimagePart.src)
     let slicedUrl = mainImageimagePart.src.slice(-20)
-    console.log(slicedUrl)
     let properUrl = `/images${slicedUrl}`
-    console.log(properUrl)
     let currIndex = imgArray.indexOf(properUrl)
-    console.log(currIndex)
     if (currIndex === 0) {
       mainImageimagePart.src = imgArray[3]
     } else {
       mainImageimagePart.src = imgArray[currIndex - 1]
     }
   })
+})
+
+//Adding eventListener to menuIcon
+menuIcon.addEventListener('click', () => {
+  navCart.classList.add('showCard')
+})
+
+//Adding eventListener to closeNav
+closeNav.addEventListener('click', () => {
+  navCart.classList.remove('showCard')
+})
+
+//Adding eventlistener to the previous image when viewing mobile device
+previousImage.addEventListener('click', () => {
+  let slicedUrl = mainImg.src.slice(-20)
+  let properUrl = `/images${slicedUrl}`
+  let currIndex = imgArray.indexOf(properUrl)
+  if (currIndex === 0) {
+    mainImg.src = imgArray[3]
+  } else {
+    mainImg.src = imgArray[currIndex - 1]
+  }
+})
+
+//Adding eventlistener to the next image when viewing mobile device
+nextImage.addEventListener('click', () => {
+  let slicedUrl = mainImg.src.slice(-20)
+  let properUrl = `/images${slicedUrl}`
+  let currIndex = imgArray.indexOf(properUrl)
+  if (currIndex === 3) {
+    mainImg.src = imgArray[0]
+  } else {
+    mainImg.src = imgArray[currIndex + 1]
+  }
 })
