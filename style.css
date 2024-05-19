@@ -559,7 +559,6 @@ main {
     display: inline-block;
   }
   .actualRupees {
-    display: inline-block;
     float: right;
   }
   .bar {
