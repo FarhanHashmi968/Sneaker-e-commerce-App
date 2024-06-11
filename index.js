@@ -131,10 +131,10 @@ thumbnailImg[0].addEventListener('click', (e) => {
                    <img src="${e.target.alt}" class= "mainImageimagePart">
                  </div>
                  <div class="thumbnailImgDisplay">
-                 <img src="images/image-product-1-thumbnail.jpg" alt="/images/image-product-1.jpg">
-                 <img src="images/image-product-2-thumbnail.jpg" alt="/images/image-product-2.jpg">
-                 <img src="images/image-product-3-thumbnail.jpg" alt="/images/image-product-3.jpg">
-                 <img src="images/image-product-4-thumbnail.jpg" alt="/images/image-product-4.jpg">
+                 <img src="images/image-product-1-thumbnail.jpg" alt="images/image-product-1.jpg">
+                 <img src="images/image-product-2-thumbnail.jpg" alt="images/image-product-2.jpg">
+                 <img src="images/image-product-3-thumbnail.jpg" alt="images/image-product-3.jpg">
+                 <img src="images/image-product-4-thumbnail.jpg" alt="images/image-product-4.jpg">
                  </div>
                 </div>
             
