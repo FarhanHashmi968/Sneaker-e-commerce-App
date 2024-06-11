@@ -21,10 +21,10 @@ const nextImage = document.querySelector('.nextImage')
 let quantity = 0
 
 let imgArray = [
-  '/images/image-product-1.jpg',
-  '/images/image-product-2.jpg',
-  '/images/image-product-3.jpg',
-  '/images/image-product-4.jpg',
+  'images/image-product-1.jpg',
+  'images/image-product-2.jpg',
+  'images/image-product-3.jpg',
+  'images/image-product-4.jpg',
 ]
 
 // Evenlisteners for increasing and decreasing quantity
@@ -53,12 +53,12 @@ cartImg[0].addEventListener('click', () => {
     exitCardContainer[0].innerHTML = `<div class="exitCard">
                         <div class="cartheading">Cart</div>
                         <div class="productDetail">
-                            <img src="/images/image-product-1-thumbnail.jpg" alt="imageLogo" class="imgproduct">
+                            <img src="images/image-product-1-thumbnail.jpg" alt="imageLogo" class="imgproduct">
                             <div>
                             <p>Fall Limited Edition Sneakers</p>
                             <p>$125.00 * <span class="quantityNo">3</span> <span class="totalCost">$375.00</span></p>
                             </div>
-                            <img src="/images/icon-delete.svg" alt="" class= "iconDelete">
+                            <img src="images/icon-delete.svg" alt="" class= "iconDelete">
                         </div>
                         <button>Checkout</button>
                     </div>
@@ -123,18 +123,18 @@ thumbnailImg[0].addEventListener('click', (e) => {
   e.preventDefault()
   imageTodisplay[0].innerHTML = `
   <div class="imagePartDisplay">
-  <img src="/images//icon-close.svg" alt="" class= "iconClose">
-  <img src="/images//icon-previous.svg" alt="" class="iconPrevious">
-  <img src="/images//icon-next.svg" alt="" class="iconNext">
+  <img src="images/icon-close.svg" alt="" class= "iconClose">
+  <img src="images/icon-previous.svg" alt="" class="iconPrevious">
+  <img src="images/icon-next.svg" alt="" class="iconNext">
                 <div class="fgDisplay">
                  <div class="mainImage">
                    <img src="${e.target.alt}" class= "mainImageimagePart">
                  </div>
                  <div class="thumbnailImgDisplay">
-                 <img src="/images//image-product-1-thumbnail.jpg" alt="/images/image-product-1.jpg">
-                 <img src="/images//image-product-2-thumbnail.jpg" alt="/images/image-product-2.jpg">
-                 <img src="/images//image-product-3-thumbnail.jpg" alt="/images/image-product-3.jpg">
-                 <img src="/images//image-product-4-thumbnail.jpg" alt="/images/image-product-4.jpg">
+                 <img src="images/image-product-1-thumbnail.jpg" alt="/images/image-product-1.jpg">
+                 <img src="images/image-product-2-thumbnail.jpg" alt="/images/image-product-2.jpg">
+                 <img src="images/image-product-3-thumbnail.jpg" alt="/images/image-product-3.jpg">
+                 <img src="images/image-product-4-thumbnail.jpg" alt="/images/image-product-4.jpg">
                  </div>
                 </div>
             
@@ -159,7 +159,7 @@ thumbnailImg[0].addEventListener('click', (e) => {
   //Adding eventListener to next button
   document.querySelector('.iconNext').addEventListener('click', () => {
     let slicedUrl = mainImageimagePart.src.slice(-20)
-    let properUrl = `/images${slicedUrl}`
+    let properUrl = `images${slicedUrl}`
     let currIndex = imgArray.indexOf(properUrl)
     if (currIndex === 3) {
       mainImageimagePart.src = imgArray[0]
@@ -171,7 +171,7 @@ thumbnailImg[0].addEventListener('click', (e) => {
   //Adding eventListeners to previous button when clicked
   document.querySelector('.iconPrevious').addEventListener('click', () => {
     let slicedUrl = mainImageimagePart.src.slice(-20)
-    let properUrl = `/images${slicedUrl}`
+    let properUrl = `images${slicedUrl}`
     let currIndex = imgArray.indexOf(properUrl)
     if (currIndex === 0) {
       mainImageimagePart.src = imgArray[3]
@@ -194,7 +194,7 @@ closeNav.addEventListener('click', () => {
 //Adding eventlistener to the previous image when viewing mobile device
 previousImage.addEventListener('click', () => {
   let slicedUrl = mainImg.src.slice(-20)
-  let properUrl = `/images${slicedUrl}`
+  let properUrl = `images${slicedUrl}`
   let currIndex = imgArray.indexOf(properUrl)
   if (currIndex === 0) {
     mainImg.src = imgArray[3]
@@ -206,7 +206,7 @@ previousImage.addEventListener('click', () => {
 //Adding eventlistener to the next image when viewing mobile device
 nextImage.addEventListener('click', () => {
   let slicedUrl = mainImg.src.slice(-20)
-  let properUrl = `/images${slicedUrl}`
+  let properUrl = `images${slicedUrl}`
   let currIndex = imgArray.indexOf(properUrl)
   if (currIndex === 3) {
     mainImg.src = imgArray[0]
